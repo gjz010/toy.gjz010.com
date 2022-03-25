@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="./js/jszip.min.js"></script>
+        <script type="text/javascript">
+            const pdf = "https://github-artifact-fetch.gjz010.workers.dev/artifact/Trebor-Huang/GTM52";
+            async function loadPDF(){
+                const b = await (await fetch(pdf)).arrayBuffer();
+                const zip=await JSZip.loadAsync(b);
+                const buffer = await zip.file(/.*\.pdf/)[0].async("arraybuffer")
+                document.getElementById("pdfViewer").contentWindow.PDFViewerApplication.open(new Uint8Array(buffer));
+            };
+            fetch(pdf)
+        </script>
+    </head>
+    <body>
+    <h1>Fetching pdf from cloudflare worker.</h1>
+    <iframe id="pdfViewer" src="./js/pdfjs/web/viewer.html?file=" style="height:100vh;width:100%;" scrolling='no' allowfullscreen onload="loadPDF()"></iframe>
+    </body>
+    
+</html>
