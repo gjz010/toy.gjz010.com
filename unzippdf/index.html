@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <title>Unzip Github Artifact PDF</title>
         <script src="./js/jszip.min.js"></script>
         <script type="text/javascript">
             const pdf = "https://github-artifact-fetch.gjz010.workers.dev/artifact/Trebor-Huang/GTM52";
@@ -15,6 +16,7 @@
     </head>
     <body>
     <h1>Fetching pdf from cloudflare worker.</h1>
+    <p><a href="./cfworker.js">Here</a> is cloudflare worker script.</p>
     <iframe id="pdfViewer" src="./js/pdfjs/web/viewer.html?file=" style="height:100vh;width:100%;" scrolling='no' allowfullscreen onload="loadPDF()"></iframe>
     </body>
     
