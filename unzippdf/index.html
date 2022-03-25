@@ -4,7 +4,7 @@
         <title>Unzip Github Artifact PDF</title>
         <script src="./js/jszip.min.js"></script>
         <script type="text/javascript">
-            const pdf = "https://github-artifact-fetch.gjz010.workers.dev/artifact/Trebor-Huang/GTM52";
+            const pdf = "https://github-artifact-fetch.gjz010.workers.dev/artifact/riscv/riscv-isa-manual";
             async function loadPDF(){
                 const b = await (await fetch(pdf)).arrayBuffer();
                 const zip=await JSZip.loadAsync(b);
